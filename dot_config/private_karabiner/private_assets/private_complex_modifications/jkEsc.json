@@ -1,0 +1,43 @@
+{
+    "title": "jk to escape key",
+    "rules": [{
+
+        "description": "JK to esc",
+        "manipulators": [
+            {
+                "conditions": [
+                    {
+                        "bundle_identifiers": [
+                            "com.github.atom",
+                            "com.googlecode.iterm2",
+                            "com.jetbrains.pycharm",
+                            "com.microsoft.VSCode",
+                            "com.visualstudio.code.oss",
+                            "org.alacritty",
+                            "net.kovidgoyal.kitty"
+                        ],
+                        "type": "frontmost_application_unless"
+                    }
+                ],
+                "from": {
+                    "simultaneous": [
+                        {
+                            "key_code": "j"
+                        },
+                        {
+                            "key_code": "k"
+                        }
+                    ],
+                    "simultaneous_options": {
+                        "to_after_key_up": [
+                            {
+                                "key_code": "escape"
+                            }
+                        ]
+                    }
+                },
+                "type": "basic"
+            }
+        ]
+    }]
+}
