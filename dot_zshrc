@@ -24,7 +24,7 @@ alias cat='bat'
 alias wvim='NVIM_APPNAME="wvim" nvim'
 alias cd='z'
 alias codi='code-insiders .'
-
+alias lg='lazygit'
 
 
 
