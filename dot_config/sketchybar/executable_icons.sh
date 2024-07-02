@@ -1,4 +1,13 @@
 #!/bin/bash
+#misc icons
+MOONSTAR=󰥹
+STAR=󰓎
+STARSOFT=
+MOONCRESCENT=󰽥
+FLAME=
+DEATHSTAR=󰣙
+PLANET=
+DEATHFULL=󰣘
 
 # General Icons
 LOADING=􀖇

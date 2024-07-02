@@ -10,6 +10,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 #my aliases
+alias n='nvim'
 alias ls='lsd'
 alias home="z /Users/ayaan"
 alias up="z .."
@@ -25,9 +26,13 @@ alias wvim='NVIM_APPNAME="wvim" nvim'
 alias cd='z'
 alias codi='code-insiders .'
 alias lg='lazygit'
-#below command gets the path of the folder i am cd'd into in the finder app, in finder i have an apple script pinned to the toolbar, which opens a new tab in kitty and runs the cdf command, effectively cding me into the current finder directory in one click.
-#there is def a smarter way of doing this but oh well
 alias cdf="eval \"z \\\"\\\`osascript -e 'tell app \\\\\\\"Finder\\\\\\\" to return the POSIX path of (target of window 1 as alias)'\\\`\\\"\""
+
+#cdf alias docs
+#gets the path of the folder i am cd'd into in the finder app, in finder i have an apple script pinned to the toolbar, which opens a new tab in kitty and runs the cdf command, effectively cding me into the current finder directory in one click.
+#there is def a smarter way of doing this but oh well
+#cdf alias docs
+
 
 
 vv() {
@@ -40,8 +45,9 @@ vv() {
   # Open Neovim with the selected config
   NVIM_APPNAME=$(basename $config) nvim $@
 }
-
+#got below code from:
 #https://yazi-rs.github.io/docs/quick-start/
+#when you hit q in yazi, it exits yazi and cd's into whatever directory you were in in yazi
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"

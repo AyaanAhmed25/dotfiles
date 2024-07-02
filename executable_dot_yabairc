@@ -12,6 +12,9 @@ sudo yabai --load-sa
 yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
+yabai -m rule --add app="sioyek" role="AXWindow" subrole="AXDialog" manage=on
+#no idea what the above rule means but that is the reason sioyek app behaves as expected when i disalbe titlebar for it, so ig when faced with an app 
+#w/out title bar this solves it?
 #
 
 # global settings

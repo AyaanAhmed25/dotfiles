@@ -5,7 +5,7 @@ cpu_top=(
   label=CPU
   icon.drawing=off
   width=0
-  padding_right=15
+  padding_right=5
   y_offset=6
 )
 
@@ -13,7 +13,7 @@ cpu_percent=(
   label.font="$FONT:Heavy:12"
   label=CPU
   y_offset=-4
-  padding_right=15
+  padding_right=5
   width=55
   icon.drawing=off
   update_freq=4
@@ -29,6 +29,7 @@ cpu_sys=(
   background.height=30
   background.drawing=on
   background.color=$TRANSPARENT
+  padding_right=-15
 )
 
 cpu_user=(
@@ -38,6 +39,7 @@ cpu_user=(
   background.height=30
   background.drawing=on
   background.color=$TRANSPARENT
+  padding_right=-15
 )
 
 sketchybar --add item cpu.top right              \

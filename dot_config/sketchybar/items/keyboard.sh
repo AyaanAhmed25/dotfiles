@@ -2,6 +2,7 @@
 
 keyboard=(
     icon.drawing=off
+    padding_left=0
     label.font="$FONT:Semibold:14.0"
     script="$PLUGIN_DIR/keyboard.sh"
 )
