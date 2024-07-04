@@ -1,11 +1,12 @@
 lastupdatecheck: 0
 recentrepos:
+    - /Users/ayaan/catppuccin/userstyles
+    - /Users/ayaan/.Trash/mainRepo/userstyles
+    - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/.config/nvim
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-qt
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch
-    - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/ProjectDopamine/PDFrontEnd/vue/quicktest/Test
-    - /Users/ayaan/catppuccin/userstyles
     - /Users/ayaan/Apprentice/front-end
 startuppopupversion: 5
 lastversion: 0.42.0
