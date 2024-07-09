@@ -75,7 +75,7 @@ export FZF_DEFAULT_OPTS=" \
 
 
 
-eval $(thefuck --alias)
+eval $(thefuck --alias heck)
 
 
 

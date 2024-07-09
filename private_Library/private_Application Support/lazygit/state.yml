@@ -1,11 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
+    - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-server
     - /Users/ayaan/.config/nvim
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-client
     - /Users/ayaan/catppuccin/userstyles
-    - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-qt
     - /Users/ayaan/ProjectDopamine/PDFrontEnd/vue/quicktest/Test
     - /Users/ayaan/Apprentice/front-end
