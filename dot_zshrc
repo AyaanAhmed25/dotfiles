@@ -21,6 +21,7 @@ alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
+alias laf='la | fzf'
 alias cat='bat'
 alias wvim='NVIM_APPNAME="wvim" nvim'
 alias cd='z'
@@ -74,7 +75,7 @@ export FZF_DEFAULT_OPTS=" \
 
 
 
-
+eval $(thefuck --alias)
 
 
 
@@ -93,3 +94,8 @@ autoload -Uz compinit && compinit
 bindkey '^y' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+
+
+#increase the limit for the num of entries saved in history
+HISTSIZE=99999999
+SAVEHIST=$HISTSIZE
