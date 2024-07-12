@@ -72,7 +72,11 @@ export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
-
+# Preview file content using bat
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 
 eval $(thefuck --alias heck)
@@ -98,3 +102,7 @@ bindkey '^n' history-search-forward
 #increase the limit for the num of entries saved in history
 HISTSIZE=99999999
 SAVEHIST=$HISTSIZE
+
+#atuin, for command history search and stuff
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh --disable-up-arrow)"
