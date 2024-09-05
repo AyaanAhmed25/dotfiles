@@ -1,20 +1,24 @@
 lastupdatecheck: 0
 recentrepos:
+    - /Users/ayaan/catppuccin/userstyles
+    - /Users/ayaan/compSci/MacOSAutoSetup/KickStart
+    - /Users/ayaan/.config/nvim.chad
+    - /Users/ayaan/.config/nvim
+    - /Users/ayaan/compSci/vim-sleuth
+    - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-server
     - /Users/ayaan/.local/share/chezmoi
-    - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch
-    - /Users/ayaan/.config/nvim
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-client
-    - /Users/ayaan/catppuccin/userstyles
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-qt
     - /Users/ayaan/ProjectDopamine/PDFrontEnd/vue/quicktest/Test
     - /Users/ayaan/Apprentice/front-end
 startuppopupversion: 5
-lastversion: 0.42.0
+lastversion: 0.43.1
 customcommandshistory: []
 hidecommandlog: false
 ignorewhitespaceindiffview: false
 diffcontextsize: 3
+renamesimilaritythreshold: 50
 localbranchsortorder: recency
 remotebranchsortorder: alphabetical
 gitlogorder: topo-order
