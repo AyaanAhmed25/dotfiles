@@ -1,2 +1,3 @@
 [v1]
 "imessage-exporter 1.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["imessage-exporter"]
+"rustlings 6.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["rustlings"]

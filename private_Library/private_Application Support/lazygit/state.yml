@@ -1,13 +1,16 @@
 lastupdatecheck: 0
 recentrepos:
+    - /Users/ayaan/.config/nvim
+    - /Users/ayaan/compSci/Rust/learnRust/rustlings
+    - /Users/ayaan/.config/nvim.dots
+    - /Users/ayaan/.local/share/chezmoi
+    - /Users/ayaan/compSci/ai/learnAI/ISLP_labs
     - /Users/ayaan/catppuccin/userstyles
     - /Users/ayaan/compSci/MacOSAutoSetup/KickStart
     - /Users/ayaan/.config/nvim.chad
-    - /Users/ayaan/.config/nvim
     - /Users/ayaan/compSci/vim-sleuth
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-server
-    - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-client
     - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-qt
     - /Users/ayaan/ProjectDopamine/PDFrontEnd/vue/quicktest/Test

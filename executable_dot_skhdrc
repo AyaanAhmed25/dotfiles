@@ -70,15 +70,16 @@
 #
 #               an EOL character signifies the end of the bind.
 
-
+#0x2A is the keycode for "\" launch run "skhd -o" to get keycode for any key
 #keybindings to open apps
 alt - return : open -a "kitty"
-alt - a : open -a "arc"
+# alt - a : open -a "arc"
 alt - m : open -a "messages"
 alt - w : open -a "microsoft word"
 alt - g : open -a "finder"
 alt - v : open -a "visual studio code - insiders"
-
+alt - 0x2A : open -a "sioyek"
+alt - n : open -a "notes"
 # focus window
 alt - tab : yabai -m window --focus recent
 alt - h : yabai -m window --focus west
