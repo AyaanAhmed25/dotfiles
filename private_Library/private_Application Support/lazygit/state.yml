@@ -1,9 +1,10 @@
 lastupdatecheck: 0
 recentrepos:
     - /Users/ayaan/.config/nvim
+    - /Users/ayaan/.config/nvimRewrite
+    - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/compSci/Rust/learnRust/rustlings
     - /Users/ayaan/.config/nvim.dots
-    - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/compSci/ai/learnAI/ISLP_labs
     - /Users/ayaan/catppuccin/userstyles
     - /Users/ayaan/compSci/MacOSAutoSetup/KickStart

@@ -286,7 +286,7 @@
       ]
     },
     {
-      "description": "(2/2) Auto close brackets & quotes ( (), '', \"\", ``, [], {}, \u201c\u201d, \u2018\u2019, <> )",
+      "description": "(2/2) Auto close brackets & quotes ( (),\'', \"\", ``, [], {}, \u201c\u201d, \u2018\u2019, <> )",
       "manipulators": [
         {
           "type": "basic",
