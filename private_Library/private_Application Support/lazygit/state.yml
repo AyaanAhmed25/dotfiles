@@ -1,7 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
-    - /Users/ayaan/.config/nvim
     - /Users/ayaan/.local/share/chezmoi
+    - /Users/ayaan/.config/nvim
     - /Users/ayaan/.config/nvimRewrite
     - /Users/ayaan/compSci/Rust/learnRust/rustlings
     - /Users/ayaan/.config/nvim.dots

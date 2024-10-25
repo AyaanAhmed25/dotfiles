@@ -107,6 +107,9 @@ bindkey '^y' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+#keybindings for jk to esc, zsh default vim mode emulation 
+bindkey -M viins 'jk' vi-cmd-mode
+
 #pyenv
 
 export PYENV_ROOT="$HOME/.pyenv"
