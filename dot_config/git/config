@@ -1,0 +1,25 @@
+[user]
+	name = AyaanAhmed25
+	email = ayaan.ahmed.25@icloud.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	excludesfile = /Users/ayaan/.config/git/.gitignore
+[push]
+	default = simple
+[init]
+	defaultBranch = main
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[credential "https://github.com"]
+	username = AyaanAhmed25
