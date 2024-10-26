@@ -8,7 +8,8 @@ palette = "catppuccin_mocha"
 format = """$all"""
 right_format = """$time"""
 
-
+add_newline = false
+command_timeout = 3000
 
 # Starship modules
 [character]

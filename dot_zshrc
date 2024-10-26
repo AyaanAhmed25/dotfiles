@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 #completion definitions for the brew command and also some brew packages, code is from https://docs.brew.sh/Shell-Completion
 if type brew &>/dev/null
 then
@@ -7,9 +8,16 @@ then
   compinit
 fi
 
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
+
+
 #set c++ compiler to gcc 14
 # export CC=/opt/homebrew/bin/gcc-14
+export CC=/opt/homebrew/Cellar/llvm@18/18.1.8/bin/clang
+export CXX=/opt/homebrew/Cellar/llvm@18/18.1.8/bin/clang++
 
 #my aliases
 alias n='nvim'
@@ -26,7 +34,7 @@ alias lt='ls --tree'
 alias laf='la | fzf'
 alias cat='bat'
 alias wvim='NVIM_APPNAME="wvim" nvim'
-alias cd='z'
+# alias cd='z'
 alias codi='code-insiders .'
 alias lg='lazygit'
 alias cdf="eval \"z \\\"\\\`osascript -e 'tell app \\\\\\\"Finder\\\\\\\" to return the POSIX path of (target of window 1 as alias)'\\\`\\\"\""
@@ -86,13 +94,8 @@ export FZF_ALT_C_OPTS="
 
 eval $(thefuck --alias heck)
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-
+#zsh-nvm plugin source:
+# source ~/.zsh_plugins/zsh-nvm/zsh-nvm.plugin.zsh
 
 eval "$(zoxide init zsh)"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -128,3 +131,6 @@ eval "$(atuin init zsh --disable-up-arrow)"
 #keep in end for starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+
+# zprof
