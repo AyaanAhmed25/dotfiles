@@ -105,13 +105,14 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
 #
-#keybindings for zsh autosuggestions:
-bindkey '^y' autosuggest-accept
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
 
 #keybindings for jk to esc, zsh default vim mode emulation 
 bindkey -M viins 'jk' vi-cmd-mode
+#to enable vim mode emulatino
+bindkey -v
+bindkey '^y' autosuggest-accept
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 #pyenv
 
@@ -128,9 +129,9 @@ SAVEHIST=$HISTSIZE
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh --disable-up-arrow)"
 
+#keybindings for zsh autosuggestions:
 #keep in end for starship
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
 
 # zprof
