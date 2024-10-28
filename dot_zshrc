@@ -8,12 +8,6 @@ then
   compinit
 fi
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#
-
-
 #set c++ compiler to gcc 14
 # export CC=/opt/homebrew/bin/gcc-14
 export CC=/opt/homebrew/Cellar/llvm@18/18.1.8/bin/clang
