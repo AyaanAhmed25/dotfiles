@@ -1,5 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
+    - /Users/ayaan/compSci/betterQuran/QuranFrontEnd
+    - /Users/ayaan/compSci/GitPlayground
     - /Users/ayaan/.config/nvim
     - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/.config/nvimRewrite

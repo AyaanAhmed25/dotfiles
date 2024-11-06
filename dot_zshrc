@@ -88,9 +88,6 @@ export FZF_ALT_C_OPTS="
 
 eval $(thefuck --alias heck)
 
-#zsh-nvm plugin source:
-# source ~/.zsh_plugins/zsh-nvm/zsh-nvm.plugin.zsh
-
 eval "$(zoxide init zsh)"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -102,18 +99,20 @@ autoload -Uz compinit && compinit
 
 #keybindings for jk to esc, zsh default vim mode emulation 
 bindkey -M viins 'jk' vi-cmd-mode
-#to enable vim mode emulatino
+#to enable vim mode emulatinon
 bindkey -v
 bindkey '^y' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
 #pyenv
-
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+
+#fnm, needed to manage node versions. Above line gets the node version to set the env variable or smth
+eval "$(fnm env --use-on-cd --shell zsh)"
 
 #increase the limit for the num of entries saved in history
 HISTSIZE=99999999
