@@ -6,7 +6,7 @@
 palette = "catppuccin_mocha"
 
 format = """$all"""
-right_format = """$time"""
+right_format = """${custom.dir}"""
 
 add_newline = true
 command_timeout = 3000
@@ -34,13 +34,15 @@ symbol = ' '
 
 [directory]
 truncation_length = 4
-truncate_to_repo = false
-repo_root_style = "bold green"
+truncate_to_repo = true
 style = "bold lavender"
 read_only = " 󰌾 "
 home_symbol = "󱃪 "
 
-
+[custom.dir]
+require_repo = true
+style = "bold red"
+format = '[$path]($style)'
 # righ
 
 # Palette definitions

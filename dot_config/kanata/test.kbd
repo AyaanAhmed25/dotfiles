@@ -18,34 +18,55 @@
 (defalias 
  fn (layer-while-held function)
  term (layer-switch terminal)
+ base (layer-switch default)
  atl (multi lalt (layer-while-held alted-with-exceptions))
+ cap (layer-while-held cap)
+)
+
+
+(defalias
+  ynm (cmd sudo -u ayaan bash -c "/opt/homebrew/bin/yabai -m space --layout stack") 
+  ym (cmd sudo -u ayaan bash -c "/opt/homebrew/bin/yabai -m space --layout bsp")
+  ywn (cmd sudo -u ayaan bash -c "/opt/homebrew/bin/yabai -m space --focus next")
+  ywp (cmd sudo -u ayaan bash -c "/opt/homebrew/bin/yabai -m space --focus prev")
+  ysn (cmd sudo -u ayaan bash -c "/opt/homebrew/bin/yabai -m window --focus stack.next")
+  ysp (cmd sudo -u ayaan bash -c "/opt/homebrew/bin/yabai -m window --focus stack.prev")
+  yrw (cmd sudo -u ayaan bash -c "/opt/homebrew/bin/yabai -m window --focus recent")
 )
 
 (defalias
  l1 (multi (layer-switch default) (cmd open -a "Arc")) 
  l2 (multi (layer-switch terminal) (cmd open -a "Kitty"))
  l3 (multi (layer-switch default) (cmd open -a "Sioyek")) 
- l4 (multi (layer-switch default) (cmd open -a "Word")) 
- l5 (multi (layer-switch default) (cmd open -a "Arc")) 
- l6 (multi (layer-switch default) (cmd open -a "Arc")) 
-
-
+ l4 (multi (layer-switch default) (cmd open -a "microsoft Word")) 
+ l5 (multi (layer-switch default) (cmd open -a "notes")) 
+ l6 (multi (layer-switch default) (cmd open -a "messages")) 
+ l7 (multi (layer-switch default) (cmd open -a "finder")) 
 )
 
 (deflayer default
   grv  brdown brup f17 XX XX f16  prev pp   next mute voldwn volu  _  _
   esc  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  @cap a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft up
   @fn  lctl @atl lmet           spc            rmet ralt left down rght
+)
+
+(deflayer source
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12    f16 f17 
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+  fn   lctl lalt lmet           spc            rmet ralt left down rght
 )
 
 
 
 (deflayer function
   _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _  _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    del
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -55,26 +76,33 @@
 (deflayer alted-with-exceptions
   _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    @l1    _    _    _    _    _    _    _    _    _    _    @l2
-  _    _    _    _    _    _    _    _    _    _    _    _    _
+  @yrw    @l2    @l4    @l2    _    _    _    _    _    _    _    _    _    @l3
+  _    @l1    _    _    _    @l7    _    _    _    _    _    _    @l2
+  _    _    _    _    _    _    @l5    @l6    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 
-
+(deflayer cap
+  _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    @ysp    @ysn    @ywp    @ywn    _    _    _
+  _    _    _    _    _    _    left    down    up    rght    @base    _    _
+  _    _    _    _    _    _    @ynm    @ym     _   _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
 
 (deflayer terminal
   _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
+  lctl    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    lmet    _    lctl              _              _    _    _    _    _
 )
 
 
 #|
-(deflayer terminal
+(deflayer whatever
   _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
