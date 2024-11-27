@@ -13,3 +13,8 @@ export PATH="$PATH:/Users/ayaan/Library/Application Support/JetBrains/Toolbox/sc
 export EDITOR='/opt/homebrew/bin/nvim'
 export PAGER='less'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# Setting PATH for Python 3.13
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:${PATH}"
+export PATH

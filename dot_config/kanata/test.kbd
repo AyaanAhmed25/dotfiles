@@ -20,6 +20,7 @@
  term (layer-switch terminal)
  base (layer-switch default)
  atl (multi lalt (layer-while-held alted-with-exceptions))
+ clt (multi lctl (layer-while-held tctl-with-exceptions))
  cap (layer-while-held cap)
 )
 
@@ -95,11 +96,19 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  lctl    _    _    _    _    _    _    _    _    _    _    _    _
+  @clt    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    lmet    _    lctl              _              _    _    _    _    _
 )
 
+(deflayer tctl-with-exceptions
+ _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
+ _    _    _    _    _    _    _    _    _    _    _    _    _    _
+ _    _    _    _    _    _    _    @ysp    @ysn    @ywp    @ywn    _    _    _
+ _    _    _    _    _    _    _    _    _    _    _    _    _
+ _    _    _    _    _    _    _    _    _    _    _    _    _
+ _    _    _    _              _              _    _    _    _    _
+ )
 
 #|
 (deflayer whatever

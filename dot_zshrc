@@ -10,8 +10,8 @@ fi
 
 #set c++ compiler to gcc 14
 # export CC=/opt/homebrew/bin/gcc-14
-export CC=/opt/homebrew/Cellar/llvm@18/18.1.8/bin/clang
-export CXX=/opt/homebrew/Cellar/llvm@18/18.1.8/bin/clang++
+# export CC=/opt/homebrew/Cellar/llvm@18/18.1.8/bin/clang
+# export CXX=/opt/homebrew/Cellar/llvm@18/18.1.8/bin/clang++
 
 #my aliases
 alias n='nvim'
@@ -31,6 +31,7 @@ alias wvim='NVIM_APPNAME="wvim" nvim'
 # alias cd='z'
 alias codi='code-insiders .'
 alias gl='lazygit'
+alias pip='pip3'
 alias cdf="eval \"z \\\"\\\`osascript -e 'tell app \\\\\\\"Finder\\\\\\\" to return the POSIX path of (target of window 1 as alias)'\\\`\\\"\""
 alias !='eval "$(fc -ln -1)" | fzf'
 
