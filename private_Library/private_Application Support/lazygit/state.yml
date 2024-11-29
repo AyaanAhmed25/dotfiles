@@ -1,17 +1,17 @@
 lastupdatecheck: 0
 recentrepos:
+    - /Users/ayaan/.config/nvimRewrite
+    - /Users/ayaan/.config/nvim
+    - /Users/ayaan/compSci/Rust/learnRust/rustlings
     - /Users/ayaan/.config/kanata
     - /Users/ayaan/compSci/Rust/tauriMenubar/FocusTimer
     - /Users/ayaan/compSci/lspsaga.nvim
-    - /Users/ayaan/.config/nvim
     - /Users/ayaan/compSci/betterQuran/quranData/pythonShenanigans
     - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/compSci/GitPlayground
     - /Users/ayaan/.config/nvim.dots
     - /Users/ayaan/compSci/betterQuran/QuranFrontEnd
     - /Users/ayaan/compSci/learningWebDev/odin-recipies
-    - /Users/ayaan/.config/nvimRewrite
-    - /Users/ayaan/compSci/Rust/learnRust/rustlings
     - /Users/ayaan/compSci/ai/learnAI/ISLP_labs
     - /Users/ayaan/catppuccin/userstyles
     - /Users/ayaan/compSci/MacOSAutoSetup/KickStart
