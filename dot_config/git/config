@@ -1,3 +1,5 @@
+[include]
+	path = /Users/ayaan/.config/delta/catppuccin.gitconfig
 [user]
 	name = AyaanAhmed25
 	email = ayaan.ahmed.25@icloud.com
@@ -8,6 +10,15 @@
 	required = true
 [core]
 	excludesfile = /Users/ayaan/.config/git/.gitignore
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	features = catppuccin-mocha
+	navigate = true  # use n and N to move between diff sections
+	dark = true      # or light = true, or omit for auto-detection
+[merge]
+	conflictstyle = zdiff3
 [push]
 	default = simple
 [init]

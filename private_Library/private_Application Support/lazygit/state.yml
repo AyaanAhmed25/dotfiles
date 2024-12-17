@@ -1,7 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
-    - /Users/ayaan/.config/nvimRewrite
     - /Users/ayaan/.config/nvim
+    - /Users/ayaan/.config/nvimRewrite
+    - /Users/ayaan/compSci/telescope-picker-list.nvim
+    - /Users/ayaan/compsci/dub/dub
+    - /Users/ayaan/compsci/floatSubs/TauriSubs
+    - /Users/ayaan/compSci/betterQuran/QuranFrontEnd
     - /Users/ayaan/compSci/Rust/learnRust/rustlings
     - /Users/ayaan/.config/kanata
     - /Users/ayaan/compSci/Rust/tauriMenubar/FocusTimer
@@ -10,7 +14,6 @@ recentrepos:
     - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/compSci/GitPlayground
     - /Users/ayaan/.config/nvim.dots
-    - /Users/ayaan/compSci/betterQuran/QuranFrontEnd
     - /Users/ayaan/compSci/learningWebDev/odin-recipies
     - /Users/ayaan/compSci/ai/learnAI/ISLP_labs
     - /Users/ayaan/catppuccin/userstyles

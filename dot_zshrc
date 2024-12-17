@@ -35,6 +35,20 @@ alias pip='pip3'
 alias cdf="eval \"z \\\"\\\`osascript -e 'tell app \\\\\\\"Finder\\\\\\\" to return the POSIX path of (target of window 1 as alias)'\\\`\\\"\""
 alias !='eval "$(fc -ln -1)" | fzf'
 
+ml() {
+    pyenv activate ML || { echo "Failed to activate ML"; return 1; }
+    pyenv shell ML
+    pyenv local ML
+    echo "ML environment is ready."
+}
+
+mani() {
+    pyenv activate manim || { echo "Failed to activate manim"; return 1; }
+    pyenv shell manim
+    pyenv local manim
+    echo "manim environment is ready."
+}
+
 #cdf alias docs
 #gets the path of the folder i am cd'd into in the finder app, in finder i have an apple script pinned to the toolbar, which opens a new tab in kitty and runs the cdf command, effectively cding me into the current finder directory in one click.
 #there is def a smarter way of doing this but oh well
@@ -64,7 +78,10 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
-
+#downloads gitignore file. example: gi python,java
+function gi() {
+	curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;
+}
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 #fzf custom color scheme, currently catppuccin mocha
@@ -109,10 +126,10 @@ bindkey '^n' history-search-forward
 #fnm, needed to manage node versions. Above line gets the node version to set the env variable or smth
 eval "$(fnm env --use-on-cd --shell zsh)"
 
-#uv in place of pyenv and the like. better python experience.
-#following lines are for the shell completions
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
+#pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 #increase the limit for the num of entries saved in history
 HISTSIZE=99999999
@@ -122,6 +139,7 @@ SAVEHIST=$HISTSIZE
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh --disable-up-arrow)"
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 #keybindings for zsh autosuggestions:
 #keep in end for starship
 eval "$(starship init zsh)"

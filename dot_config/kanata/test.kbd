@@ -16,7 +16,7 @@
 
 
 (defalias 
- fn (layer-while-held function)
+ fn (multi fn (layer-while-held function))
  term (layer-switch terminal)
  base (layer-switch default)
  atl (multi lalt (layer-while-held alted-with-exceptions))
@@ -79,7 +79,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @yrw    @l2    @l4    @l2    _    _    _    _    _    _    _    _    _    @l3
   _    @l1    _    _    _    @l7    _    _    _    _    _    _    @l2
-  _    _    _    _    _    _    @l5    @l6    _    _    _    _    _
+  _    _    _    _    @l3    _    @l5    @l6    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 
