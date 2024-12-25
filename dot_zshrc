@@ -122,6 +122,7 @@ bindkey -v
 bindkey '^y' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey '^I' fzf-completion
 
 #fnm, needed to manage node versions. Above line gets the node version to set the env variable or smth
 eval "$(fnm env --use-on-cd --shell zsh)"

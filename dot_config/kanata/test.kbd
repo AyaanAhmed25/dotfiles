@@ -20,9 +20,12 @@
  term (layer-switch terminal)
  base (layer-switch default)
  atl (multi lalt (layer-while-held alted-with-exceptions))
+ talt (multi lalt (layer-while-held terminal-alted-with-exceptions))
  clt (multi lctl (layer-while-held tctl-with-exceptions))
  cap (layer-while-held cap)
+ num (layer-while-held num)
 )
+
 
 
 (defalias
@@ -43,6 +46,7 @@
  l5 (multi (layer-switch default) (cmd open -a "notes")) 
  l6 (multi (layer-switch default) (cmd open -a "messages")) 
  l7 (multi (layer-switch default) (cmd open -a "finder")) 
+ l8 (multi (layer-switch terminal) (cmd sudo -u ayaan bash -c "open -a 'emacs'"))
 )
 
 (deflayer default
@@ -64,7 +68,6 @@
 )
 
 
-
 (deflayer function
   _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    del
@@ -77,7 +80,7 @@
 (deflayer alted-with-exceptions
   _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @yrw    @l2    @l4    @l2    _    _    _    _    _    _    _    _    _    @l3
+  @yrw    @l8    @l4    @l2    _    _    _    _    _    _    _    _    _    @l3
   _    @l1    _    _    _    @l7    _    _    _    _    _    _    @l2
   _    _    _    _    @l3    _    @l5    @l6    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
@@ -98,7 +101,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @clt    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    lmet    _    lctl              _              _    _    _    _    _
+  _    lmet    @talt    lctl              _              @num    lsft    _    _    _
 )
 
 (deflayer tctl-with-exceptions
@@ -109,6 +112,24 @@
  _    _    _    _    _    _    _    _    _    _    _    _    _
  _    _    _    _              _              _    _    _    _    _
  )
+
+(deflayer terminal-alted-with-exceptions
+  _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    @l1    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _   S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8  S-9  S-0   -    =    _
+  _    1    2    3    4    5    6    7    8    9    0    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
 
 #|
 (deflayer whatever
