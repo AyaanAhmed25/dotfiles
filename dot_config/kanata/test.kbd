@@ -23,9 +23,24 @@
  talt (multi lalt (layer-while-held terminal-alted-with-exceptions))
  clt (multi lctl (layer-while-held tctl-with-exceptions))
  cap (layer-while-held cap)
+ #cap (tap-hold 300 130 esc (layer-while-held cap))
  num (layer-while-held num)
 )
 
+(defvirtualkeys
+  org.gnu.Emacs        (layer-while-held terminal)
+  net.kovidgoyal.kitty (layer-while-held terminal)
+  ;; Define other virtual keys here if needed
+)
+#|
+(defalias
+  adapt (switch
+    ((input virtual org.gnu.Emacs)) (layer-while-held terminal) break
+    ((input virtual net.kovidgoyal.kitty)) (layer-while-held terminal) break
+    () XX break
+  )
+)
+|#
 
 
 (defalias
@@ -39,6 +54,19 @@
 )
 
 (defalias
+ l1 (cmd open -a "Arc")
+ l2 (cmd open -a "Kitty")
+ l3 (cmd open -a "Sioyek")
+ l4 (cmd open -a "microsoft Word")
+ l5 (cmd open -a "notes")
+ l6 (cmd open -a "messages")
+ l7 (cmd open -a "finder")
+ l8 (cmd sudo -u ayaan bash -c "open -a 'emacs'")
+)
+
+
+#|
+(defalias
  l1 (multi (layer-switch default) (cmd open -a "Arc")) 
  l2 (multi (layer-switch terminal) (cmd open -a "Kitty"))
  l3 (multi (layer-switch default) (cmd open -a "Sioyek")) 
@@ -47,7 +75,9 @@
  l6 (multi (layer-switch default) (cmd open -a "messages")) 
  l7 (multi (layer-switch default) (cmd open -a "finder")) 
  l8 (multi (layer-switch terminal) (cmd sudo -u ayaan bash -c "open -a 'emacs'"))
+ l8 (multi (layer-switch terminal) (cmd sudo -u ayaan bash -c "open -a 'emacs'"))
 )
+|#
 
 (deflayer default
   grv  brdown brup f17 XX XX f16  prev pp   next mute voldwn volu  _  _
@@ -108,7 +138,7 @@
  _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
  _    _    _    _    _    _    _    _    _    _    _    _    _    _
  _    _    _    _    _    _    _    @ysp    @ysn    @ywp    @ywn    _    _    _
- _    _    _    _    _    _    _    _    _    _    _    _    _
+ _    _    _    _    _    _    _    _    _    _    @base    _    _
  _    _    _    _    _    _    _    _    _    _    _    _    _
  _    _    _    _              _              _    _    _    _    _
  )
@@ -131,8 +161,9 @@
   _    _    _    _              _              _    _    _    _    _
 )
 
+
 #|
-(deflayer whatever
+(deflayer template
   _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _

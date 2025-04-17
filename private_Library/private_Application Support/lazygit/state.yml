@@ -1,11 +1,14 @@
 lastupdatecheck: 0
 recentrepos:
-    - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/.config/kanata
+    - /Users/ayaan/compSci/korean/Awesome-Korean
     - /Users/ayaan/.config/nvim
+    - /Users/ayaan/.config/emacs
+    - /Users/ayaan/compSci/python/play/namhee
+    - /Users/ayaan/.config/doom
+    - /Users/ayaan/.local/share/chezmoi
     - /Users/ayaan/.config/nvimRewrite
     - /Users/ayaan/.local/share/nvim/lazy/blink.cmp
-    - /Users/ayaan/.config/doom
     - /Users/ayaan/compSci/telescope-picker-list.nvim
     - /Users/ayaan/compsci/dub/dub
     - /Users/ayaan/compsci/floatSubs/TauriSubs
@@ -22,14 +25,10 @@ recentrepos:
     - /Users/ayaan/compSci/MacOSAutoSetup/KickStart
     - /Users/ayaan/.config/nvim.chad
     - /Users/ayaan/compSci/vim-sleuth
-    - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch
-    - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-server
-    - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-client
-    - /Users/ayaan/ProjectDopamine/PDPythonCrossPlatFinal/activitywatch/aw-qt
     - /Users/ayaan/ProjectDopamine/PDFrontEnd/vue/quicktest/Test
     - /Users/ayaan/Apprentice/front-end
 startuppopupversion: 5
-lastversion: 0.43.1
+lastversion: 0.45.2
 customcommandshistory: []
 hidecommandlog: false
 ignorewhitespaceindiffview: false

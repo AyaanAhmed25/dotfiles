@@ -7,19 +7,21 @@ then
   autoload -Uz compinit
   compinit
 fi
+#disable auto upgrading for homebrew
+HOMEBREW_NO_AUTO_UPDATE=1
 
 #set c++ compiler to gcc 14
 # export CC=/opt/homebrew/bin/gcc-14
-# export CC=/opt/homebrew/Cellar/llvm@18/18.1.8/bin/clang
+# export CC=/opt/homebrew/Cellar/llvm/19.1.4/bin/clang
 # export CXX=/opt/homebrew/Cellar/llvm@18/18.1.8/bin/clang++
 
 #my aliases
 alias n='nvim'
 alias ls='lsd'
+alias crl='xh'
 alias home="z /Users/ayaan"
 alias up="z .."
 alias iina="/Applications/IINA.app/Contents/MacOS/iina-cli"
-alias fn="open ."
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
@@ -32,6 +34,7 @@ alias codi='code-insiders .'
 alias gl='lazygit'
 alias pip='pip3'
 alias !='eval "$(fc -ln -1)" | fzf'
+alias fn="open ."
 alias cdf="eval \"z \\\"\\\`osascript -e 'tell app \\\\\\\"Finder\\\\\\\" to return the POSIX path of (target of window 1 as alias)'\\\`\\\"\""
 #cdf alias docs
 #gets the path of the folder i am cd'd into in the finder app, in finder i have an apple script pinned to the toolbar, which opens a new tab in kitty and runs the cdf command, effectively cding me into the current finder directory in one click.
@@ -157,3 +160,12 @@ esac
 
 
 # zprof
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/Users/ayaan/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
