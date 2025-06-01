@@ -41,18 +41,11 @@ alias cdf="eval \"z \\\"\\\`osascript -e 'tell app \\\\\\\"Finder\\\\\\\" to ret
 #there is def a smarter way of doing this but oh well
 #cdf alias docs
 
-ml() {
-    pyenv activate ML || { echo "Failed to activate ML"; return 1; }
-    pyenv shell ML
-    pyenv local ML
-    echo "ML environment is ready."
-}
-
-mani() {
-    pyenv activate manim || { echo "Failed to activate manim"; return 1; }
-    pyenv shell manim
-    pyenv local manim
-    echo "manim environment is ready."
+agent() {
+    pyenv activate agent || { echo "Failed to activate agent"; return 1; }
+    pyenv shell agent
+    pyenv local agent
+    echo "agent environment is ready."
 }
 
 
@@ -126,7 +119,7 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^I' fzf-completion
 
-#fnm, needed to manage node versions. Above line gets the node version to set the env variable or smth
+#fnm, needed to manage node versions. Below line gets the node version to set the env variable or smth
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 
@@ -143,11 +136,12 @@ rga-fzf() {
 	echo "opening $file" &&
 	xdg-open "$file"
 }
+source /Users/ayaan/bin/fzf-git.sh
 
 #pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
 
 #increase the limit for the num of entries saved in history
 HISTSIZE=99999999
