@@ -40,3 +40,31 @@ export LABEL_COLOR=$WHITE # Color of all labels
 export POPUP_BACKGROUND_COLOR=$BAR_COLOR
 export POPUP_BORDER_COLOR=$WHITE
 export SHADOW_COLOR=$BLACK
+
+
+
+### ef-dream
+# export BLACK=0xff181926
+# export WHITE=0xffefd5c5
+# export RED=0xffff6f6f
+# export GREEN=0xff51b04f
+# export BLUE=0xff57b0ff
+# export YELLOW=0xffeed49f
+# export ORANGE=0xfff5a97f
+# export MAGENTA=0xffc6a0f6
+# export GREY=0xff322f34
+# export TRANSPARENT=0x00000000
+# export BG0=0xff232025
+# export BG1=0x602a272c
+# export BG2=0x605b595e
+#
+# # General bar colors
+# export BAR_COLOR=$BG0
+# export BAR_BORDER_COLOR=$BG2
+# export BACKGROUND_1=$BG1
+# export BACKGROUND_2=$BG2
+# export ICON_COLOR=$WHITE # Color of all icons
+# export LABEL_COLOR=$WHITE # Color of all labels
+# export POPUP_BACKGROUND_COLOR=$BAR_COLOR
+# export POPUP_BORDER_COLOR=$WHITE
+# export SHADOW_COLOR=$BLACK

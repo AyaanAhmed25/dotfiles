@@ -1,3 +1,4 @@
+# uncomment the next line and the last line to see shell start-up time
 # zmodload zsh/zprof
 #completion definitions for the brew command and also some brew packages, code is from https://docs.brew.sh/Shell-Completion
 if type brew &>/dev/null
@@ -35,6 +36,7 @@ alias gl='lazygit'
 alias pip='pip3'
 alias !='eval "$(fc -ln -1)" | fzf'
 alias fn="open ."
+alias please="sudo"
 alias cdf="eval \"z \\\"\\\`osascript -e 'tell app \\\\\\\"Finder\\\\\\\" to return the POSIX path of (target of window 1 as alias)'\\\`\\\"\""
 #cdf alias docs
 #gets the path of the folder i am cd'd into in the finder app, in finder i have an apple script pinned to the toolbar, which opens a new tab in kitty and runs the cdf command, effectively cding me into the current finder directory in one click.
@@ -168,7 +170,6 @@ esac
 
 
 
-# zprof
 
 # >>> juliaup initialize >>>
 
@@ -178,3 +179,4 @@ path=('/Users/ayaan/.juliaup/bin' $path)
 export PATH
 
 # <<< juliaup initialize <<<
+# zprof

@@ -54,7 +54,7 @@
 )
 
 (defalias
- l1 (cmd open -a "Arc")
+ l1 (cmd open -a "arc")
  l2 (cmd open -a "Kitty")
  l3 (cmd open -a "Sioyek")
  l4 (cmd open -a "microsoft Word")
@@ -74,7 +74,6 @@
  l5 (multi (layer-switch default) (cmd open -a "notes")) 
  l6 (multi (layer-switch default) (cmd open -a "messages")) 
  l7 (multi (layer-switch default) (cmd open -a "finder")) 
- l8 (multi (layer-switch terminal) (cmd sudo -u ayaan bash -c "open -a 'emacs'"))
  l8 (multi (layer-switch terminal) (cmd sudo -u ayaan bash -c "open -a 'emacs'"))
 )
 |#
