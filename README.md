@@ -1,6 +1,6 @@
- # Ayaan's Dotfiles
+ # My Dotfiles
 
- # WORK IN PROGRESS
+ # THIS README IS A WORK IN PROGRESS
 
  ## keybinds with kanata. 
 kanata leverages karabiners C++ driver under the hood (virtual keyboard) 

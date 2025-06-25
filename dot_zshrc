@@ -123,7 +123,9 @@ bindkey '^I' fzf-completion
 
 #fnm, needed to manage node versions. Below line gets the node version to set the env variable or smth
 eval "$(fnm env --use-on-cd --shell zsh)"
-
+#uv shell completions
+eval "$(uv generate-shell-completion zsh)"
+eval "$(uvx --generate-shell-completion zsh)"
 
 rga-fzf() {
 	RG_PREFIX="rga --files-with-matches"
