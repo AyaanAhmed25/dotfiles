@@ -84,7 +84,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft up
-  @fn  lctl @atl lmet           spc            rmet ralt left down rght
+  @fn  lctl @atl lmet           spc            rsft ralt left down rght
 )
 
 (deflayer source
@@ -118,7 +118,7 @@
 (deflayer cap
   _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    @ysp    @ysn    @ywp    @ywn    _    _    _
+  _    _    _    _    lrld    _    _    @ysp    @ysn    @ywp    @ywn    _    _    _
   _    _    _    _    _    _    left    down    up    rght    @base    _    _
   _    _    _    _    _    _    @ynm    @ym     _   _    _    _    _
   _    _    _    _              _              _    _    _    _    _
@@ -130,7 +130,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @clt    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    lmet    @talt    lctl              _              @num    lsft    _    _    _
+  _    lmet    @talt    lctl              _              lsft   @num   _    _    _
 )
 
 (deflayer tctl-with-exceptions

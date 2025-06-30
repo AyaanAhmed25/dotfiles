@@ -7,9 +7,22 @@ then
 
   autoload -Uz compinit
   compinit
+  #zsh autosuggestions case insensitve file completion stuff:
+  zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 fi
 #disable auto upgrading for homebrew
 HOMEBREW_NO_AUTO_UPDATE=1
+
+# use zsh-vi-mode plugin, apparently its better
+function zvm_config() {
+	ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+	ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
+}
+function zvm_after_lazy_keybindings() {
+	# zvm_bindkey viins '^I' fzf-completion
+	# zvm_bindkey viins '^Y' autosuggest-accept
+}
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 #set c++ compiler to gcc 14
 # export CC=/opt/homebrew/bin/gcc-14
@@ -79,6 +92,7 @@ function yy() {
 function gi() {
 	curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ ;
 }
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 #fzf custom color scheme, currently catppuccin mocha
@@ -106,20 +120,17 @@ eval $(thefuck --alias heck)
 eval "$(zoxide init zsh)"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-#zsh autosuggestions case insensitve file completion stuff:
-#
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
-autoload -Uz compinit && compinit
-#
 
 #keybindings for jk to esc, zsh default vim mode emulation 
-bindkey -M viins 'jk' vi-cmd-mode
+# bindkey -M viins 'jk' vi-cmd-mode
 #to enable vim mode emulatinon
-bindkey -v
-bindkey '^y' autosuggest-accept
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-bindkey '^I' fzf-completion
+# bindkey -v
+# bindkey -M viins 'jk' vi-cmd-mode
+# bindkey '^y' autosuggest-accept
+# bindkey '^p' history-search-backward
+# bindkey '^n' history-search-forward
+# bindkey '^I' fzf-completion
+
 
 #fnm, needed to manage node versions. Below line gets the node version to set the env variable or smth
 eval "$(fnm env --use-on-cd --shell zsh)"
@@ -140,7 +151,18 @@ rga-fzf() {
 	echo "opening $file" &&
 	xdg-open "$file"
 }
-source /Users/ayaan/bin/fzf-git.sh
+
+
+function zvm_after_init() {
+	zvm_bindkey viins '^I' fzf-completion
+	zvm_bindkey viins '^Y' autosuggest-accept
+	bindkey -r '^G'
+	source /Users/ayaan/bin/fzf-git.sh
+	#atuin, for command history search and stuff
+	. "$HOME/.atuin/bin/env"
+	eval "$(atuin init zsh --disable-up-arrow)"
+}
+
 
 #pyenv
 # export PYENV_ROOT="$HOME/.pyenv"
@@ -151,9 +173,6 @@ source /Users/ayaan/bin/fzf-git.sh
 HISTSIZE=99999999
 SAVEHIST=$HISTSIZE
 
-#atuin, for command history search and stuff
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh --disable-up-arrow)"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 #keybindings for zsh autosuggestions:
