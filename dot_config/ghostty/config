@@ -1,0 +1,7 @@
+font-family = "JetBrains Mono NL"
+font-size = "14"
+theme = "catppuccin-mocha"
+
+# winwow-decoration = "none"
+
+macos-titlebar-style = "tabs"
