@@ -64,6 +64,8 @@
  l8 (cmd sudo -u ayaan bash -c "open -a 'emacs'")
 )
 
+;; maybe bind x key to do something useful
+;; rcmd + bspc = cmd+bspc
 
 #|
 (defalias

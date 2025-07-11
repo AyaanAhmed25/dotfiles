@@ -5,3 +5,4 @@ theme = "catppuccin-mocha"
 # winwow-decoration = "none"
 
 macos-titlebar-style = "tabs"
+macos-window-shadow = "false"

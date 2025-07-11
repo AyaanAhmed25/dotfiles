@@ -33,9 +33,9 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 alias n='nvim'
 alias ls='lsd'
 alias crl='xh'
-alias home="z /Users/ayaan"
+alias home='z /Users/ayaan'
 alias up="z .."
-alias iina="/Applications/IINA.app/Contents/MacOS/iina-cli"
+alias iina='/Applications/IINA.app/Contents/MacOS/iina-cli'
 alias l='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
@@ -48,8 +48,9 @@ alias codi='code-insiders .'
 alias gl='lazygit'
 alias pip='pip3'
 alias !='eval "$(fc -ln -1)" | fzf'
-alias fn="open ."
-alias please="sudo"
+alias fn='open .'
+alias please='sudo'
+alias sp='source .venv/bin/activate'
 alias cdf="eval \"z \\\"\\\`osascript -e 'tell app \\\\\\\"Finder\\\\\\\" to return the POSIX path of (target of window 1 as alias)'\\\`\\\"\""
 #cdf alias docs
 #gets the path of the folder i am cd'd into in the finder app, in finder i have an apple script pinned to the toolbar, which opens a new tab in kitty and runs the cdf command, effectively cding me into the current finder directory in one click.
