@@ -55,7 +55,7 @@
 
 (defalias
  l1 (cmd open -a "arc")
- l2 (cmd open -a "Kitty")
+ l2 (cmd sudo -u ayaan bash -c "open -a 'Kitty'")
  l3 (cmd open -a "Sioyek")
  l4 (cmd open -a "microsoft Word")
  l5 (cmd open -a "notes")
@@ -112,7 +112,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @yrw    @l8    @l4    @l2    _    _    _    _    _    _    _    _    _    @l3
-  _    @l1    _    _    _    @l7    _    _    _    _    _    _    @l2
+  _    @l1    _    _    _    @l7    _    _    _    _    _    _    _
   _    _    _    _    @l3    _    @l5    @l6    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
