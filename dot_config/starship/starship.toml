@@ -6,14 +6,12 @@
 palette = "catppuccin_mocha"
 
 format = """$all"""
-right_format = """${custom.dir}"""
 
 add_newline = true
 command_timeout = 3000
 
 # Starship modules
 [character]
-# Note the use of Catppuccin color 'peach'
 success_symbol = "[[󰣙](blue) ❯](pink)"
 error_symbol = "[[󰣙](rosewater) ❯](red)"
 vimcmd_symbol = "[󰣙 ❮](subtext1)" # For use with zsh-vi-mode
@@ -30,7 +28,7 @@ diverged = '[⇕⇡${ahead_count}⇣${behind_count}](yellow)'
 behind = '[⇣${count}](red)'
 
 [fill]
-symbol = ' '
+symbol = ''
 
 [directory]
 truncation_length = 4
@@ -38,14 +36,6 @@ truncate_to_repo = true
 style = "bold lavender"
 read_only = " 󰌾 "
 home_symbol = "󱃪 "
-
-[custom.dir]
-require_repo = true
-style = "bold red"
-format = '[$path]($style)'
-# righ
-
-# Palette definitions
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

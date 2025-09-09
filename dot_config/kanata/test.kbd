@@ -19,16 +19,22 @@
  fn (multi fn (layer-while-held function))
  term (layer-switch terminal)
  base (layer-switch default)
- atl (multi lalt (layer-while-held alted-with-exceptions))
+ atl (switch
+    ((or lmet rmet lctl rctl rsft lsft)) lalt break  ;; If any other modifier is held, just act as regular alt
+    () (multi lalt (layer-while-held alted-with-exceptions)) break  ;; Otherwise, swithc layer
+ )
  talt (multi lalt (layer-while-held terminal-alted-with-exceptions))
+ ealt (multi lalt (layer-while-held emacs-alted-with-exceptions))
+ eralt (multi lctl lalt)
  clt (multi lctl (layer-while-held tctl-with-exceptions))
+ ecap (tap-hold 200 200 (tap-dance 200 (C-x C-c)) (layer-while-held ectl-with-exceptions))
  cap (layer-while-held cap)
  #cap (tap-hold 300 130 esc (layer-while-held cap))
  num (layer-while-held num)
 )
 
 (defvirtualkeys
-  org.gnu.Emacs        (layer-while-held terminal)
+  org.gnu.Emacs        (layer-while-held emacs)
   net.kovidgoyal.kitty (layer-while-held terminal)
   ;; Define other virtual keys here if needed
 )
@@ -61,7 +67,8 @@
  l5 (cmd open -a "notes")
  l6 (cmd open -a "messages")
  l7 (cmd open -a "finder")
- l8 (cmd sudo -u ayaan bash -c "open -a 'emacs'")
+ l8 (cmd open -a "Visual Studio Code")
+ l9 (cmd sudo -u ayaan bash -c "open -a 'emacs'")
 )
 
 ;; maybe bind x key to do something useful
@@ -111,9 +118,9 @@
 (deflayer alted-with-exceptions
   _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @yrw    @l8    @l4    @l2    _    _    _    _    _    _    _    _    _    @l3
+  @yrw    @l9    @l4    @l2    _    _    _    _    _    _    _    _    _    @l3
   _    @l1    _    _    _    @l7    _    _    _    _    _    _    _
-  _    _    _    _    @l3    _    @l5    @l6    _    _    _    _    _
+  _    _    _    _    @l8    _    @l5    @l6    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )
 
@@ -135,6 +142,24 @@
   _    lmet    @talt    lctl              _              lsft   @num   _    _    _
 )
 
+(deflayer emacs
+  _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @ecap    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    lmet    @ealt    lctl              _              lsft   @eralt   _    _    _
+)
+
+(deflayer ectl-with-exceptions
+ _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
+ _    _    _    _    _    _    _    _    _    _    _    _    _    _
+ _    _    _    _    _    _    _    @ysp    @ysn    @ywp    @ywn    _    _    _
+ _    _    _    _    _    _    left    down    up    rght    _    _    _
+ _    _    _    _    _    _    _    _    _    _    _    _    _
+ _    _    _    _              _              _    _    _    _    _
+ )
+
 (deflayer tctl-with-exceptions
  _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
  _    _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -149,6 +174,15 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @yrw    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    @l1    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _              _              _    _    _    _    _
+)
+
+(deflayer emacs-alted-with-exceptions
+  _    _    _    _    _    _    _    _    _    _    _    _    _  _  _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @yrw    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _              _              _    _    _    _    _
 )

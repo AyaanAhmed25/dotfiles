@@ -1,5 +1,8 @@
 # uncomment the next line and the last line to see shell start-up time
 # zmodload zsh/zprof
+# conda stuff
+export CONDA_CHANGEPS1=false
+fpath+=~/bin/conda-zsh-completion/
 #completion definitions for the brew command and also some brew packages, code is from https://docs.brew.sh/Shell-Completion
 if type brew &>/dev/null
 then
@@ -10,6 +13,13 @@ then
   #zsh autosuggestions case insensitve file completion stuff:
   zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 fi
+
+# conda stuff cont:
+zstyle ':completion::complete:*' use-cache 1
+zstyle ":conda_zsh_completion:*" use-groups true
+zstyle ":conda_zsh_completion:*" show-unnamed true
+zstyle ":conda_zsh_completion:*" sort-envs-by-time true
+
 #disable auto upgrading for homebrew
 HOMEBREW_NO_AUTO_UPDATE=1
 
@@ -52,18 +62,12 @@ alias fn='open .'
 alias please='sudo'
 alias sp='source .venv/bin/activate'
 alias rc='rclone --filter-from ~/.config/rclone/rcloneignore'
+alias p3='python3'
 alias cdf="eval \"z \\\"\\\`osascript -e 'tell app \\\\\\\"Finder\\\\\\\" to return the POSIX path of (target of window 1 as alias)'\\\`\\\"\""
 #cdf alias docs
 #gets the path of the folder i am cd'd into in the finder app, in finder i have an apple script pinned to the toolbar, which opens a new tab in kitty and runs the cdf command, effectively cding me into the current finder directory in one click.
 #there is def a smarter way of doing this but oh well
 #cdf alias docs
-
-agent() {
-    pyenv activate agent || { echo "Failed to activate agent"; return 1; }
-    pyenv shell agent
-    pyenv local agent
-    echo "agent environment is ready."
-}
 
 
 
@@ -154,29 +158,44 @@ rga-fzf() {
 	xdg-open "$file"
 }
 
+#https://junegunn.github.io/fzf/tips/ripgrep-integration/
+fzr() (
+  RELOAD='reload:rg --column --color=always --smart-case {q} || :'
+  OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+            nvim {1} +{2}     # No selection. Open the current line in Vim.
+          else
+            nvim +cw -q {+f}  # Build quickfix list for the selected items.
+          fi'
+  fzf --disabled --ansi --multi \
+      --bind "start:$RELOAD" --bind "change:$RELOAD" \
+      --bind "enter:become:$OPENER" \
+      --bind "ctrl-o:execute:$OPENER" \
+      --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
+      --delimiter : \
+      --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+      --preview-window '~4,+{2}+4/3,<80(up)' \
+      --query "$*"
+)
 
 function zvm_after_init() {
 	zvm_bindkey viins '^I' fzf-completion
 	zvm_bindkey viins '^Y' autosuggest-accept
 	bindkey -r '^G'
 	source /Users/ayaan/bin/fzf-git.sh
+	source ~/bin/fzf-tab/fzf-tab.plugin.zsh
+	zstyle ':fzf-tab:*' fzf-flags --bind=tab:accept
 	#atuin, for command history search and stuff
 	. "$HOME/.atuin/bin/env"
 	eval "$(atuin init zsh --disable-up-arrow)"
 }
 
 
-#pyenv
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
-
 #increase the limit for the num of entries saved in history
 HISTSIZE=99999999
 SAVEHIST=$HISTSIZE
 
 
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+# export VIRTUAL_ENV_DISABLE_PROMPT=1
 #keybindings for zsh autosuggestions:
 #keep in end for starship
 eval "$(starship init zsh)"
@@ -203,3 +222,19 @@ export PATH
 
 # <<< juliaup initialize <<<
 # zprof
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/ayaan/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/ayaan/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/ayaan/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/ayaan/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
